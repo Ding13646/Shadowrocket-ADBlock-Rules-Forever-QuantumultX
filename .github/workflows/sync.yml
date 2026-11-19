@@ -1,0 +1,45 @@
+name: Sync upstream rules to Quantumult X
+
+on:
+  schedule:
+    - cron: '15 23 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/sync.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Convert upstream release
+        run: python scripts/convert.py --output-dir dist --report reports/conversion-report.md
+      - name: Commit updated outputs
+        run: |
+          if git diff --quiet -- dist reports/conversion-report.md; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add dist reports/conversion-report.md
+          git commit -m 'chore: sync upstream Quantumult X rules'
+          git push

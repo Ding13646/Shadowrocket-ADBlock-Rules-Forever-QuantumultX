@@ -1,0 +1,5 @@
+# Derived output notice
+
+Files under `dist/` are generated adaptations of the upstream release files and are distributed under the Creative Commons Attribution-ShareAlike 4.0 International License. Source: https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever
+
+The converter and report document syntax changes and known behavior differences. Third-party remote rule URLs embedded in generated files remain owned and licensed by their respective providers.
