@@ -8,18 +8,18 @@ Status: **passed with documented caveats**
 |---|---:|---:|---:|
 | `lazy.conf` | 12 | 37 | 0 |
 | `lazy_group.conf` | 12 | 60 | 0 |
-| `sr_ad_only.conf` | 53300 | 0 | 0 |
-| `sr_adb.conf` | 54023 | 5 | 0 |
+| `sr_ad_only.conf` | 53659 | 0 | 0 |
+| `sr_adb.conf` | 54382 | 5 | 0 |
 | `sr_backcn.conf` | 4 | 5 | 0 |
-| `sr_backcn_ad.conf` | 53304 | 5 | 0 |
+| `sr_backcn_ad.conf` | 53663 | 5 | 0 |
 | `sr_cnip.conf` | 393 | 5 | 0 |
-| `sr_cnip_ad.conf` | 53693 | 5 | 0 |
-| `sr_direct_banad.conf` | 53302 | 5 | 0 |
-| `sr_proxy_banad.conf` | 53309 | 5 | 0 |
+| `sr_cnip_ad.conf` | 54052 | 5 | 0 |
+| `sr_direct_banad.conf` | 53661 | 5 | 0 |
+| `sr_proxy_banad.conf` | 53668 | 5 | 0 |
 | `sr_top500_banlist.conf` | 30265 | 6 | 0 |
-| `sr_top500_banlist_ad.conf` | 83565 | 6 | 0 |
+| `sr_top500_banlist_ad.conf` | 83924 | 6 | 0 |
 | `sr_top500_whitelist.conf` | 780 | 6 | 0 |
-| `sr_top500_whitelist_ad.conf` | 54080 | 6 | 0 |
+| `sr_top500_whitelist_ad.conf` | 54439 | 6 | 0 |
 
 ## `lazy.conf`
 
@@ -155,7 +155,7 @@ Status: **passed with documented caveats**
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 54132: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 54491: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_backcn.conf`
 
@@ -173,7 +173,7 @@ Status: **passed with documented caveats**
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 53356: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 53715: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_cnip.conf`
 
@@ -191,7 +191,7 @@ Status: **passed with documented caveats**
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 53783: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 54142: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_direct_banad.conf`
 
@@ -200,7 +200,7 @@ Status: **passed with documented caveats**
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 53352: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 53711: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_proxy_banad.conf`
 
@@ -209,7 +209,7 @@ Status: **passed with documented caveats**
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 53360: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 53719: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_top500_banlist.conf`
 
@@ -223,13 +223,13 @@ Status: **passed with documented caveats**
 
 ## `sr_top500_banlist_ad.conf`
 
-- **WARNING / changed**, line 83661: Mapped external resource path from Shadowrocket to QuantumultX; verify target list semantics and URL availability (`RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleNews/AppleNews.list,PROXY`)
+- **WARNING / changed**, line 84020: Mapped external resource path from Shadowrocket to QuantumultX; verify target list semantics and URL availability (`RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleNews/AppleNews.list,PROXY`)
 - **WARNING / changed**, line 7: IPv6 disabled using QuanX [dns] no-ipv6; tunnel behavior may differ (`ipv6 = false`)
 - **WARNING / unsupported**, line 8: Shadowrocket setting not represented in QuanX output: bypass-system=true (`bypass-system = true`)
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 83670: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 84029: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
 
 ## `sr_top500_whitelist.conf`
 
@@ -243,10 +243,10 @@ Status: **passed with documented caveats**
 
 ## `sr_top500_whitelist_ad.conf`
 
-- **WARNING / changed**, line 54180: Mapped external resource path from Shadowrocket to QuantumultX; verify target list semantics and URL availability (`RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleNews/AppleNews.list,PROXY`)
+- **WARNING / changed**, line 54539: Mapped external resource path from Shadowrocket to QuantumultX; verify target list semantics and URL availability (`RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleNews/AppleNews.list,PROXY`)
 - **WARNING / changed**, line 7: IPv6 disabled using QuanX [dns] no-ipv6; tunnel behavior may differ (`ipv6 = false`)
 - **WARNING / unsupported**, line 8: Shadowrocket setting not represented in QuanX output: bypass-system=true (`bypass-system = true`)
 - **WARNING / changed**, line 9: skip-proxy entries mapped to direct filter rules; bypassing the tunnel and direct routing are not identical (`192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, fe80::/10, fc00::/7, localhost, *.local, *.lan, *.internal, e.crashlytics.com, captive.apple.com, sequoia.apple.com, seed-sequoia.siri.ap`)
 - **WARNING / changed**, line 10: bypass-tun mapped to QuanX excluded_routes; validate equivalent tunnel scope (`bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,`)
 - **WARNING / changed**, line 11: DNS resolver list mapped to QuanX; resolver order/fallback and mixed encrypted/unencrypted DNS semantics may differ (`https://dns.alidns.com/dns-query, https://doh.pub/dns-query`)
-- **WARNING / changed**, line 54189: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
+- **WARNING / changed**, line 54548: Copied MITM hostnames; QuanX certificate installation/trust and TLS behavior must be configured separately (`hostname = *.google.cn,*.googlevideo.com`)
